@@ -6,6 +6,10 @@
     --primary-color:#0F1B4C;
 }
 
+html,body{
+    scroll-behavior: smooth;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -64,8 +68,9 @@ a{
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     background-color: #E6F0FF;
-    height: 100vh;
+    height: calc(100vh - 97px);
 }
 
 .navbar{
@@ -111,15 +116,11 @@ a{
 
 
 
-.Hero .Info{
+.header .Info{
     width: 51%;
 }
 
-.Hero{
-    margin-top: 130px;
-}
-
-.Hero .sub-title{
+.header .sub-title{
     font-weight: 500;
     font-size: 1.8rem;
     line-height: 1.5;
@@ -127,7 +128,7 @@ a{
     color: #687690;
 }
 
-.Hero .title{
+.header .title{
     margin-top: 9px;
     font-weight: 700;
     font-size: 6.2rem;
@@ -135,7 +136,7 @@ a{
     color: #000336;
 }
 
-.Hero .desc{
+.header .desc{
     margin-top: 30px;
     font-family: 400;
     font-size: 1.8rem;
@@ -148,7 +149,7 @@ a{
     margin-top: 40px;
 }
 
-.Hero .Hero-img{
+.header .Hero-img{
     position: absolute;
     right: calc((100vw - 1110px) / 2 - 100px);
     bottom: 0;

@@ -70,7 +70,7 @@ a{
     flex-direction: column;
     justify-content: center;
     background-color: #E6F0FF;
-    height: calc(100vh - 97px);
+    height: calc(100vh - 94px);
 }
 
 .navbar{

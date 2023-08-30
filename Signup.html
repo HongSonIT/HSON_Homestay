@@ -21,33 +21,35 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="asset/Favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="asset/css/style-login.css">
+    <link rel="stylesheet" href="asset/css/style-signup.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <section class="container forms">
         <div class="form login">
             <div class="form-content">
-                <header>Sign in</header>
+                <header>Sign up</header>
                 <form action="#">
                     <div class="field input-field">
-                        <input type="text" placeholder="User name" id="user">
+                        <input type="text" placeholder="User name" id="username">
                     </div>
 
                     <div class="field input-field">
-                        <input type="password" placeholder="Password" id="pass">
+                        <input type="password" placeholder="Password" id="password">
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="password" placeholder="Re-Enter Password" class="password">
+                    </div>
+
+                    <div class="Check">
+                        <input type="checkbox" id="checkbox">
+                        <span class=".form-link"><i>I agree to these terms</i></span>
                     </div>
                     
-                    <div class="form-link">
-                        <a href="#" class="forgot-pass">Forgot password ?</a>
-                    </div>
 
                     <div class="field input-field">
-                        <button onclick="signin()" id="Sign_in">Sign in</button>
-                    </div>
-
-                    <div class="form-link">
-                        <span>Already have an account ? </span> <a href="#" class="signup-link">Sign up</a>
+                        <button onclick="Save()" id="Sign_up">Sign up</button>
                     </div>
                 </form>
             </div>
@@ -55,9 +57,40 @@
     </section>
 </body>
 <script src="./asset/javascript/Promise_IndexedDB.js"></script>
-<script >
-    var signin = () => {
-        window.alert("Sign in failed !!!")
+<script>
+    var schema = [
+        {
+            store_name: "Account",
+            store_options: {
+                keyPath: "id",
+                autoIncrement: "true",
+            },
+        },
+    ];
+
+    var promise_IndexedDB = new PromiseIndexedDB("HSONHomestay", schema);
+
+    var Save = () => {
+        let data_list = []
+
+        let signup_name = document.getElementById("username").value
+        let signup_pass = document.getElementById("password").value
+
+        data_list.push({
+            "id" : signup_name,
+            "pass" : signup_pass
+        })
+
+        promise_IndexedDB.update_data(data_list,"Account")
+            .then(() => {
+                window.alert("Registration sucessful !!!!")
+            })
+            .then(() => {
+                window.location.assign("index.html")
+            })
+            .catch(() => {
+                window.alert("Registration failed !!!!")
+            })
     }
 </script>
 </html>

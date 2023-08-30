@@ -39,7 +39,6 @@ form .field{
     height: 45px;
     width: 100%;
     margin-top: 20px;
-    
 }
 
 .field input , .field button{
@@ -78,3 +77,9 @@ a:hover{
 button{
     cursor: pointer;
 }
+
+.Check{
+    margin-top: 20px;
+    text-align: center;
+}
+

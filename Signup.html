@@ -33,7 +33,7 @@
                     <div class="field input-field">
                         <input type="text" placeholder="User name" id="username">
                     </div>
-
+                    
                     <div class="field input-field">
                         <input type="password" placeholder="Password" id="password">
                     </div>
@@ -56,41 +56,4 @@
         </div>
     </section>
 </body>
-<script src="./asset/javascript/Promise_IndexedDB.js"></script>
-<script>
-    var schema = [
-        {
-            store_name: "Account",
-            store_options: {
-                keyPath: "id",
-                autoIncrement: "true",
-            },
-        },
-    ];
-
-    var promise_IndexedDB = new PromiseIndexedDB("HSONHomestay", schema);
-
-    var Save = () => {
-        let data_list = []
-
-        let signup_name = document.getElementById("username").value
-        let signup_pass = document.getElementById("password").value
-
-        data_list.push({
-            "id" : signup_name,
-            "pass" : signup_pass
-        })
-
-        promise_IndexedDB.update_data(data_list,"Account")
-            .then(() => {
-                window.alert("Registration sucessful !!!!")
-            })
-            .then(() => {
-                window.location.assign("index.html")
-            })
-            .catch(() => {
-                window.alert("Registration failed !!!!")
-            })
-    }
-</script>
 </html>

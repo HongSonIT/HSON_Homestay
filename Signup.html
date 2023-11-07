@@ -29,31 +29,51 @@
         <div class="form login">
             <div class="form-content">
                 <header>Sign up</header>
-                <form action="#">
+                <form action="" class="form" id="form-1">
                     <div class="field input-field">
-                        <input type="text" placeholder="User name" id="username">
+                        <label for="username" class="form-label"><b>Tên Tài Khoản </b></label>
+                        <input class="form-control" type="text" placeholder="Vd : Nguyenson11" id="username">
+                        <span class="form-mess"></span>
+                    </div>
+
+                    <div class="field input-field">
+                        <label for="email" class="form-label"><b>Email</b></label>
+                        <input class="form-control" type="email" placeholder="vd : nguyenson@gmail.com" id="email">
+                        <span class="form-mess"></span>
                     </div>
                     
                     <div class="field input-field">
-                        <input type="password" placeholder="Password" id="password">
-                    </div>
-
-                    <div class="field input-field">
-                        <input type="password" placeholder="Re-Enter Password" class="password">
-                    </div>
-
-                    <div class="Check">
-                        <input type="checkbox" id="checkbox">
-                        <span class=".form-link"><i>I agree to these terms</i></span>
+                        <label for="password" class="form-label"><b>Mật Khẩu</b></label>
+                        <input class="form-control" type="text" placeholder="vd : son@1234" id="password">
+                        <span class="form-mess"></span>
                     </div>
                     
-
                     <div class="field input-field">
-                        <button onclick="Save()" id="Sign_up">Sign up</button>
+                        <label for="re_password" class="form-label"><b>Nhập Lại Mật Khẩu</b></label>
+                        <input class="form-control" type="text" placeholder="vd : son@1234" id="re-password">
+                        <span class="form-mess"></span>
+                    </div>
+                    
+                    <div class="field input-field">
+                        <button onclick="" id="Sign_up">Sign up</button>
                     </div>
                 </form>
             </div>
         </div>
     </section>
 </body>
+<script src="asset/javascript/Varlidator.js"></script>
+<script>
+    Validation({
+        form : '#form-1',
+        rules: [
+            Validation.isRequired('#username'),
+            Validation.isEmail('#email'),
+            Validation.isPassword('#password'),
+            Validation.isRePassword('#re-password', function(){
+                return document.querySelector("#form-1 #password").value
+            })
+        ]
+    });
+</script>
 </html>

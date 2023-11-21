@@ -31,15 +31,17 @@ header{
     text-align: center;
 }
 
-form{
-    margin-top: 30px;
-}
 
-form .field{
+form .field {
     height: 45px;
     width: 100%;
-    margin-top: 20px;
-    
+    margin-top: 55px;
+}
+
+form .field:first-child {
+    height: 45px;
+    width: 100%;
+    margin-top: 10px;
 }
 
 .field input , .field button{
@@ -78,3 +80,22 @@ a:hover{
 button{
     cursor: pointer;
 }
+
+.Check{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.input-field.invalid .form-control{
+    border-color: red;
+}
+
+.input-field.invalid .form-mess{
+    color: red;
+}
+
+.form-label{
+    color: black;
+    font-size: 18px;
+}
+

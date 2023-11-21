@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in</title>
     <link rel="apple-touch-icon" sizes="57x57" href="asset/Favicon/">
     <link rel="apple-touch-icon" sizes="60x60" href="asset/Favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="asset/Favicon/apple-icon-72x72.png">
@@ -23,41 +23,42 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="asset/css/style-login.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homestay</title>
+    <link rel="stylesheet" href="./asset/css/style-room1.css">
 </head>
 <body>
-    <section class="container forms">
-        <div class="form login">
-            <div class="form-content">
-                <header>Đăng Nhập</header>
-                <form action="#" id="form-1">
-                    <div class="field input-field">
-                        <label for="email" class="form-label"><b>Email</b></label>
-                        <input class="form-control" type="text" placeholder="vd : nguyenson@gmail.com" id="email">
-                        <span class="form-mess"></span>
+    <div class="Room">
+        <div class="content" >
+            <div class="Room_main">
+                <div class="Room_left">
+                    <img class="Img_room" src="./asset/img/Home2.jpg" alt="Stayhome">
+                </div>
+                <div class="Room_right">
+                    <p class="desc">CouCou Homestead , Hòa mình với thiên nhiên tại Đà Lạt</p>
+                    <div class="infomation">
+                        <div class="img_lable">
+                            <img src="./asset/img/Group 457.svg" alt="icon1" class="icon">
+                            <span class="label">2 Giường</span>
+                        </div>
+                        <div class="img_lable">
+                            <img src="./asset/img/Group 458.svg" alt="icon2" class="icon">
+                            <span class="label">1 Bồn</span>
+                        </div>
+                        <div class="img_lable">
+                            <img src="./asset/img/Subtract.svg" alt="icon3" class="icon">
+                            <span class="label">200 Mét Vuông</span>
+                        </div>
+                        <div class="img_lable">
+                            <span class="label_price">Giá Từ : 450.000 VNĐ / 1 đêm</span>
+                        </div>
                     </div>
-
-                    <div class="field input-field">
-                        <label for="password" class="form-label"><b>Mật Khẩu</b></label>
-                        <input class="form-control" type="text" placeholder="Vd : son@1234" id="password">
-                        <span class="form-mess"></span>
+                    <div class="Btn_Order">
+                        <a href="BookRoom.html" class="Btn">Đặt Phòng</a>
                     </div>
-
-                    <div class="field input-field">
-                        <button onclick="signin()" id="Sign_in">Đăng Nhập</button>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 </body>
-<script src="./asset/javascript/Varlidator.js"></script>
-<script>
-    Validation({
-        form : '#form-1',
-        rules: [
-            Validation.isEmail('#email'),
-            Validation.isPassword('#password')
-        ]
-    });
-</script>
 </html>

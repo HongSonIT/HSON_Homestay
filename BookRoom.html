@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in</title>
+    <title>Order</title>
     <link rel="apple-touch-icon" sizes="57x57" href="asset/Favicon/">
     <link rel="apple-touch-icon" sizes="60x60" href="asset/Favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="asset/Favicon/apple-icon-72x72.png">
@@ -28,34 +28,28 @@
     <section class="container forms">
         <div class="form login">
             <div class="form-content">
-                <header>Đăng Ký</header>
+                <header>Đặt Phòng</header>
                 <form action="" class="form" id="form-1">
                     <div class="field input-field">
-                        <label for="username" class="form-label"><b>Tên Tài Khoản </b></label>
-                        <input class="form-control" type="text" placeholder="Vd : Nguyenson11" id="username">
+                        <label for="Quantity" class="form-label"><b>Số Lượng</b></label>
+                        <input class="form-control" type="text" id="Quantity">
                         <span class="form-mess"></span>
                     </div>
 
                     <div class="field input-field">
-                        <label for="email" class="form-label"><b>Email</b></label>
-                        <input class="form-control" type="email" placeholder="vd : nguyenson@gmail.com" id="email">
+                        <label for="TypeRoom" class="form-label"><b>Loại Phòng</b></label>
+                        <input class="form-control" type="text" id="TypeRoom">
                         <span class="form-mess"></span>
                     </div>
                     
                     <div class="field input-field">
-                        <label for="password" class="form-label"><b>Mật Khẩu</b></label>
-                        <input class="form-control" type="text" placeholder="vd : son@1234" id="password">
+                        <label for="Number" class="form-label"><b>Số Ngày</b></label>
+                        <input class="form-control" type="text" id="Number">
                         <span class="form-mess"></span>
                     </div>
                     
                     <div class="field input-field">
-                        <label for="re_password" class="form-label"><b>Nhập Lại Mật Khẩu</b></label>
-                        <input class="form-control" type="text" placeholder="vd : son@1234" id="re-password">
-                        <span class="form-mess"></span>
-                    </div>
-                    
-                    <div class="field input-field">
-                        <button onclick="" id="Sign_up">Đăng Ký</button>
+                        <button onclick="" id="Sign_up">Đặt Phòng</button>
                     </div>
                 </form>
             </div>
@@ -67,12 +61,9 @@
     Validation({
         form : '#form-1',
         rules: [
-            Validation.isRequired('#username'),
-            Validation.isEmail('#email'),
-            Validation.isPassword('#password'),
-            Validation.isRePassword('#re-password', function(){
-                return document.querySelector("#form-1 #password").value
-            })
+            Validation.isQuantity('#Quantity'),
+            Validation.isTypeRoom('#TypeRoom'),
+            Validation.isNumber('#Number')
         ]
     });
 </script>

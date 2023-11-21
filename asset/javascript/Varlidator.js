@@ -29,9 +29,6 @@ function Validation(options){
     }
 }
 
-
-
-
 Validation.isRequired = function(selector){
     return{
         selector : selector,
@@ -57,8 +54,12 @@ Validation.isEmail = function(selector){
     return {
         selector : selector,
         test : function(value){
+            if(value == ""){
+                return "Trường này không được để trống"
+            }
+
             var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            return  regex.test(value) ? undefined : "Trường này phải là email"
+            return  regex.test(value) ? undefined : "Email không hợp lệ"
         }
     }
 }
@@ -73,12 +74,14 @@ Validation.isPassword = function(selector){
             }
 
             if(value.length < 8){
-                return "Tên tài khoản phải lớn hơn 8 ký tự"
+                return "Mật Khẩu phải lớn hơn 8 ký tự"
             }
 
         }
     }
 }
+
+
 
 Validation.isRePassword = function(selector , getPassword){
     return {
@@ -88,5 +91,55 @@ Validation.isRePassword = function(selector , getPassword){
         }
     }
 }
+
+Validation.isQuantity = function(selector){
+    return {
+        selector : selector,
+        test : function(value){
+            if(value == ""){
+                return "Trường này không được để trống"
+            }
+
+            if(value > 5){
+                return " Số người ở phải không quá 5"
+            }
+        }
+    }
+}
+
+Validation.isTypeRoom = function(selector){
+    return {
+        selector : selector,
+        test : function(value){
+
+            if(value == ""){
+                return "Trường này không được để trống"
+            }
+
+            if(value != "A" && value != "B" && value != "C"){
+                return "Có 3 loại phòng A , B và C"
+            }
+        }
+    }
+}
+
+Validation.isNumber = function(selector){
+    return {
+        selector : selector,
+        test : function(value){
+            if(value == ""){
+                return "Trường này không được để trống"
+            }
+
+            if(value > 5){
+                return "Số ngày đặt phòng không quá 5"
+            }
+        }
+    }
+}
+
+
+
+
 
     

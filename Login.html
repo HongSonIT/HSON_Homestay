@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="field input-field">
-                        <button onclick="signin()" id="Sign_in">Đăng Nhập</button>
+                        <input value="Đăng Nhập" type="button" onclick="signin()" id="Sign_in">
                     </div>
                 </form>
             </div>
@@ -52,6 +52,17 @@
 </body>
 <script src="./asset/javascript/Varlidator.js"></script>
 <script>
+
+    function signin(){
+        var promise = new Promise((Resolve,Reject) => {
+            window.alert("Đăng Nhập Thành Công !!!")
+            Resolve()
+        }).then(() => {
+            window.location.assign("./index.html")
+        })
+    }
+
+
     Validation({
         form : '#form-1',
         rules: [

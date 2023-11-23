@@ -92,6 +92,7 @@ Validation.isRePassword = function(selector , getPassword){
     }
 }
 
+
 Validation.isQuantity = function(selector){
     return {
         selector : selector,
